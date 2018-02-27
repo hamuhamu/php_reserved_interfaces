@@ -2,6 +2,7 @@
 
 PHPの定義済みインターフェィスの使い方の確認
 
+```
 - [ ] Traversable
 - [ ] Iterator
 - [ ] IteratorAggregate
@@ -15,6 +16,7 @@ PHPの定義済みインターフェィスの使い方の確認
 - [ ] SeekableIterator
 - [ ] SplObserver
 - [ ] SplSubject
+```
 
 ## 参考URL
 
