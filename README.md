@@ -1,0 +1,2 @@
+# php_reserved_interfaces
+PHPの定義済みインターフェィスの確認
