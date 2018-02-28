@@ -33,7 +33,6 @@ class IteratorExample implements \Iterator
      */
     public function rewind(): void
     {
-        var_dump(__METHOD__);
         $this->position = 0;
     }
 
@@ -44,7 +43,6 @@ class IteratorExample implements \Iterator
      */
     public function current()
     {
-        var_dump(__METHOD__);
         return $this->array[$this->position];
     }
 
@@ -55,7 +53,6 @@ class IteratorExample implements \Iterator
      */
     public function key(): int
     {
-        var_dump(__METHOD__);
         return $this->position;
     }
 
@@ -64,7 +61,6 @@ class IteratorExample implements \Iterator
      */
     public function next(): void
     {
-        var_dump(__METHOD__);
         ++$this->position;
     }
 
@@ -76,7 +72,6 @@ class IteratorExample implements \Iterator
      */
     public function valid(): bool
     {
-        var_dump(__METHOD__);
         return isset($this->array[$this->position]);
     }
 }

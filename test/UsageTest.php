@@ -76,8 +76,6 @@ class UsageTest extends TestCase
         $sut = new IteratorExample();
 
         foreach($sut as $key => $value) {
-            var_dump($key, $value);
-            echo "\n";
         }
     }
 }
