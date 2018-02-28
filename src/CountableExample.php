@@ -5,6 +5,8 @@ namespace App;
  * Class CountableExample
  * @package App
  * @see http://php.net/manual/ja/class.countable.php
+ *
+ * Countable を実装したクラスは、 count() 関数で使用することができます。
  */
 class CountableExample implements \Countable
 {

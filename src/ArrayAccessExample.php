@@ -5,6 +5,8 @@ namespace App;
  * Class ArrayAccessExample
  * @package App
  * @see http://php.net/manual/ja/class.arrayaccess.php
+ *
+ * 配列としてオブジェクトにアクセスするための機能のインターフェイスです。
  */
 class ArrayAccessExample implements \ArrayAccess
 {
