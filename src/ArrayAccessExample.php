@@ -22,7 +22,7 @@ class ArrayAccessExample implements \ArrayAccess
      */
     public function offsetExists($offset): bool
     {
-        return true;
+        return isset($this->container[$offset]);
     }
 
     /**
@@ -33,7 +33,7 @@ class ArrayAccessExample implements \ArrayAccess
      */
     public function offsetGet($offset): bool
     {
-        return true;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
     /**
@@ -44,7 +44,11 @@ class ArrayAccessExample implements \ArrayAccess
      */
     public function offsetSet($offset, $value): void
     {
-        return;
+        if (is_null($offset)) {
+            $this->container[] = $value;
+        } else {
+            $this->container[$offset] = $value;
+        }
     }
 
 
@@ -55,6 +59,6 @@ class ArrayAccessExample implements \ArrayAccess
      */
     public function offsetUnset($offset ): void
     {
-        return;
+        unset($this->container[$offset]);
     }
 }
