@@ -10,7 +10,8 @@ PHPの定義済みインターフェィスの使い方の確認
 - [ ] ArrayAccess
 - [ ] Serializable
 - [ ] Closure
-- [ ] GeneratorCountable
+- [ ] Generator
+- [x] Countable
 - [ ] OuterIterator
 - [ ] RecursiveIterator
 - [ ] SeekableIterator
