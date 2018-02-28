@@ -7,6 +7,13 @@ namespace App;
  * @see http://php.net/manual/ja/class.iterator.php
  *
  * 外部のイテレータあるいはオブジェクト自身から反復処理を行うためのインターフェイスです。
+ *
+ * foreachで使用した場合における呼び出し順序
+ *  - 1行目: valid, current, key
+ *  - 2行目以降: next, valid, current, key
+ *
+ * validがfalse(配列の要素数を超過)を返したらloopから抜ける
+ *
  */
 class IteratorExample implements \Iterator
 {
@@ -63,6 +70,7 @@ class IteratorExample implements \Iterator
 
     /**
      * Iterator::valid — 現在位置が有効かどうかを調べる
+     * このメソッドは Iterator::rewind() および Iterator::next() の後にコールされ、 現在の位置が有効化どうかを調べます。
      *
      * @return bool
      */
