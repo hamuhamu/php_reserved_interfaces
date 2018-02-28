@@ -4,6 +4,16 @@ namespace App;
 
 class ArrayAccessExample implements \ArrayAccess
 {
+    private $container = [];
+    public function __construct()
+    {
+        $this->container = [
+            'one'   => 1,
+            'two'   => 2,
+            'three' => 3,
+        ];
+    }
+
     /**
      * ArrayAccess::offsetExists — オフセットが存在するかどうか
      *
