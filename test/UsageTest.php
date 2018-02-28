@@ -51,4 +51,20 @@ class UsageTest extends TestCase
         $sut[1] = 'Append 2';
         $this->assertSame('Append 2', $sut[1]);
     }
+
+    /**
+     * @test
+     */
+    public function ArrayAccess_offsetUnset()
+    {
+        $sut = new ArrayAccessExample();
+
+        $this->assertSame(1, $sut['one']);
+        $sut->offsetUnset('one');
+        $this->assertSame(null, $sut['one']);
+
+        $this->assertSame(2, $sut['two']);
+        unset($sut['two']);
+        $this->assertSame(null, $sut['two']);
+    }
 }

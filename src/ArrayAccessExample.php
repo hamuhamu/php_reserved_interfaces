@@ -63,7 +63,7 @@ class ArrayAccessExample implements \ArrayAccess
      *
      * @param mixed $offset
      */
-    public function offsetUnset($offset ): void
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
