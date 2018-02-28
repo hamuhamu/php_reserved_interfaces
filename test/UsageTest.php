@@ -9,7 +9,7 @@ class UsageTest extends TestCase
     /**
      * @test
      */
-    public function Countable()
+    public function Countable_count()
     {
         $sut = new CountableExample();
         $actual = $sut->count();
@@ -17,6 +17,7 @@ class UsageTest extends TestCase
 
         $this->assertSame($expected, $actual);
 
+        // PHP標準関数のcountでもカウンティングできる
         $actual = count($sut);
         $expected = 3;
 
