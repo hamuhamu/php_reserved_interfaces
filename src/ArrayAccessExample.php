@@ -31,7 +31,7 @@ class ArrayAccessExample implements \ArrayAccess
      * @param mixed $offset
      * @return bool
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): bool
     {
         return true;
     }
