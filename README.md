@@ -7,7 +7,7 @@ PHPの定義済みインターフェィスの使い方の確認
 - [ ] Iterator
 - [ ] IteratorAggregate
 - [ ] Throwable
-- [ ] ArrayAccess
+- [x] ArrayAccess
 - [ ] Serializable
 - [ ] Closure
 - [ ] Generator
