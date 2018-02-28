@@ -27,12 +27,14 @@ class UsageTest extends TestCase
     /**
      * @test
      */
-    public function ArrayAccess()
+    public function ArrayAccess_offsetExists()
     {
         $sut = new ArrayAccessExample();
-        $actual = 1;
-        $expected = 1;
 
-        $this->assertSame($expected, $actual);
+        $this->assertSame(true, $sut->offsetExists('one'));
+        $this->assertSame(true, isset($sut['one']));
+
+        $this->assertSame(false, $sut->offsetExists('xxx'));
+        $this->assertSame(false, isset($sut['xxx']));
     }
 }
