@@ -35,9 +35,9 @@ class ArrayAccessExample implements \ArrayAccess
      * ArrayAccess::offsetGet — オフセットを取得する
      *
      * @param mixed $offset
-     * @return bool
+     * @return mixed
      */
-    public function offsetGet($offset): bool
+    public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }

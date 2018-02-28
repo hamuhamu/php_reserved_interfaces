@@ -37,4 +37,18 @@ class UsageTest extends TestCase
         $this->assertSame(false, $sut->offsetExists('xxx'));
         $this->assertSame(false, isset($sut['xxx']));
     }
+
+    /**
+     * @test
+     */
+    public function ArrayAccess_offsetSet_offsetGet()
+    {
+        $sut = new ArrayAccessExample();
+
+        $sut->offsetSet(0,'Append 1');
+        $this->assertSame('Append 1', $sut->offsetGet(0));
+
+        $sut[1] = 'Append 2';
+        $this->assertSame('Append 2', $sut[1]);
+    }
 }
