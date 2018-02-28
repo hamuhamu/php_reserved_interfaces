@@ -22,4 +22,16 @@ class UsageTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function ArrayAccess()
+    {
+        $sut = new ArrayAccessExample();
+        $actual = 1;
+        $expected = 1;
+
+        $this->assertSame($expected, $actual);
+    }
 }
