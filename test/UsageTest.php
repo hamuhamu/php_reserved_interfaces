@@ -71,11 +71,21 @@ class UsageTest extends TestCase
     /**
      * @test
      */
-    public function Iterator()
+    public function Iterator_foreach()
     {
         $sut = new IteratorExample();
 
+        $actual = [];
         foreach($sut as $key => $value) {
+            $actual[$key] = $value;
         }
+
+        $expected = [
+            0 => 'firstelement',
+            1 => 'secondelement',
+            2 => 'lastelement',
+        ];
+
+        $this->assertSame($expected, $actual);
     }
 }
