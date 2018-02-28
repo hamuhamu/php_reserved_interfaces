@@ -67,4 +67,17 @@ class UsageTest extends TestCase
         unset($sut['two']);
         $this->assertSame(null, $sut['two']);
     }
+
+    /**
+     * @test
+     */
+    public function Iterator()
+    {
+        $sut = new IteratorExample();
+
+        foreach($sut as $key => $value) {
+            var_dump($key, $value);
+            echo "\n";
+        }
+    }
 }
