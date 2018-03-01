@@ -61,7 +61,7 @@ class IteratorExample implements \Iterator
      */
     public function next(): void
     {
-        ++$this->position;
+        $this->position++;
     }
 
     /**
