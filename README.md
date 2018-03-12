@@ -4,7 +4,7 @@ PHPの定義済みインターフェィスの使い方の確認
 
 ```
 - [ ] Traversable
-- [ ] Iterator
+- [x] Iterator
 - [ ] IteratorAggregate
 - [ ] Throwable
 - [x] ArrayAccess
