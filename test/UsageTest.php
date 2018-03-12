@@ -134,10 +134,40 @@ class UsageTest extends TestCase
         $expected = [
             'property1' => 'Public property one',
             'property2' => 'Public property two',
-            'property3' => 'Public property three',
-            'property4' => 'last property',
+            'property3' => 'last property',
         ];
 
         $this->assertSame($expected, $actual);
+    }
+
+    /**
+     * @test
+     */
+    public function IteratorAggregate_getIterator()
+    {
+        $sut = new IteratorAggregateExample();
+        $itr = $sut->getIterator();
+
+        $this->assertSame($expected = true, $itr->valid(), '0行目が存在するか？');
+        $this->assertSame($expected = 'Public property one', $itr->current(), '0行目の値を返すこと');
+        $this->assertSame($expected = 'property1', $itr->key(), '0行目のキーを返すこと');
+
+        // 1行目に進める
+        $itr->next();
+
+        $this->assertSame($expected = true, $itr->valid(), '1行目が存在するか？');
+        $this->assertSame($expected = 'Public property two', $itr->current(), '1行目の値を返すこと');
+        $this->assertSame($expected = 'property2', $itr->key(), '1行目のキーを返すこと');
+
+        // 2行目に進める
+        $itr->next();
+
+        $this->assertSame($expected = true, $itr->valid(), '2行目が存在するか？');
+        $this->assertSame($expected = 'last property', $itr->current(), '2行目の値を返すこと');
+        $this->assertSame($expected = 'property3', $itr->key(), '2行目のキーを返すこと');
+
+        // 3行目に進める
+        $itr->next();
+        $this->assertSame($expected = false, $itr->valid(), '3行目が存在するか？');
     }
 }

@@ -13,12 +13,11 @@ class IteratorAggregateExample implements \IteratorAggregate
     // visibilityは、publicにする必要がある
     public $property1 = 'Public property one';
     public $property2 = 'Public property two';
-    public $property3 = 'Public property three';
-    public $property4;
+    public $property3;
 
     public function __construct()
     {
-        $this->property4 = 'last property';
+        $this->property3 = 'last property';
     }
 
     public function getIterator()
