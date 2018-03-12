@@ -92,11 +92,30 @@ class UsageTest extends TestCase
     /**
      * @test
      */
-    public function Iterator_valid_current()
+    public function Iterator_valid_current_key()
     {
         $sut = new IteratorExample();
 
         $this->assertSame($expected = true, $sut->valid(), '0行目が存在するか？');
         $this->assertSame($expected = 'firstelement', $sut->current(), '0行目の値を返すこと');
+        $this->assertSame($expected = 0, $sut->key(), '0行目のキーを返すこと');
+
+        // 1行目に進める
+        $sut->next();
+
+        $this->assertSame($expected = true, $sut->valid(), '1行目が存在するか？');
+        $this->assertSame($expected = 'secondelement', $sut->current(), '1行目の値を返すこと');
+        $this->assertSame($expected = 1, $sut->key(), '1行目のキーを返すこと');
+
+        // 2行目に進める
+        $sut->next();
+
+        $this->assertSame($expected = true, $sut->valid(), '2行目が存在するか？');
+        $this->assertSame($expected = 'lastelement', $sut->current(), '2行目の値を返すこと');
+        $this->assertSame($expected = 2, $sut->key(), '2行目のキーを返すこと');
+
+        // 3行目に進める
+        $sut->next();
+        $this->assertSame($expected = false, $sut->valid(), '3行目が存在するか？');
     }
 }
