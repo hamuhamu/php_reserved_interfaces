@@ -96,7 +96,7 @@ class UsageTest extends TestCase
     {
         $sut = new IteratorExample();
 
-        $this->assertSame($expected = true, $sut->valid());
-        $this->assertSame($expected = 'firstelement', $sut->current());
+        $this->assertSame($expected = true, $sut->valid(), '0行目が存在するか？');
+        $this->assertSame($expected = 'firstelement', $sut->current(), '0行目の値を返すこと');
     }
 }
