@@ -9,8 +9,8 @@ namespace App;
  * 外部のイテレータあるいはオブジェクト自身から反復処理を行うためのインターフェイスです。
  *
  * foreachで使用した場合における呼び出し順序
- *  - 1行目: valid, current, key
- *  - 2行目以降: next, valid, current, key
+ *  - 0行目: valid, current, key
+ *  - 1行目以降: next, valid, current, key
  *
  * validがfalse(配列の要素数を超過)を返したらloopから抜ける
  *
