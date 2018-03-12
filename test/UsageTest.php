@@ -88,4 +88,15 @@ class UsageTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function Iterator_valid_current()
+    {
+        $sut = new IteratorExample();
+
+        $this->assertSame($expected = true, $sut->valid());
+        $this->assertSame($expected = 'firstelement', $sut->current());
+    }
 }
