@@ -118,4 +118,26 @@ class UsageTest extends TestCase
         $sut->next();
         $this->assertSame($expected = false, $sut->valid(), '3行目が存在するか？');
     }
+
+    /**
+     * @test
+     */
+    public function IteratorAggregate_foreach()
+    {
+        $sut = new IteratorAggregateExample();
+
+        $actual = [];
+        foreach($sut as $key => $value) {
+            $actual[$key] = $value;
+        }
+
+        $expected = [
+            'property1' => 'Public property one',
+            'property2' => 'Public property two',
+            'property3' => 'Public property three',
+            'property4' => 'last property',
+        ];
+
+        $this->assertSame($expected, $actual);
+    }
 }
